@@ -1,8 +1,12 @@
-version : "3.3"
-services :
-  web :
-     build : .
-     ports :
-         - "8000:8000"
-     volumes:
-      - ./volume/store_data/db.sqlite3:/data/db.sqlite3
+version: "3.8"
+services:
+  my-web-app:
+    container_name: "django-todo-cicd"
+    image: iamamash/django-todo-cicd:latest
+    ports:
+      - 8000:8000
+    volumes:
+      - django-todo-cicd-volume:/app
+
+volumes:
+  django-todo-cicd-volume:
